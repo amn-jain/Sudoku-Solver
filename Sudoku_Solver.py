@@ -1,13 +1,3 @@
-Board = [[0, 8, 0, 7, 0, 1, 0, 3, 0],
-         [4, 0, 9, 0, 0, 0, 0, 0, 0],
-         [0, 5, 0, 0, 6, 0, 4, 1, 8],
-         [7, 0, 0, 0, 0, 9, 0, 0, 0],
-         [8, 0, 0, 6, 1, 0, 5, 0, 0],
-         [0, 3, 5, 0, 0, 0, 0, 2, 9],
-         [0, 6, 0, 4, 0, 7, 0, 9, 0],
-         [1, 0, 0, 0, 0, 8, 0, 0, 4],
-         [0, 2, 0, 0, 5, 0, 0, 7, 0]]
-
 def display_board(Board):
 
     for i in range(len(Board)):
@@ -16,7 +6,7 @@ def display_board(Board):
         for j in range(len(Board[0])):
             if(j%3 == 0 and j != 0):
                 print("|", end = " ")
-            if(j != 8):
+            if(j != (len(Board[0]) - 1)):
                 print(str(Board[i][j]) + " ", end = "")
             else:
                 print(str(Board[i][j]))
@@ -73,8 +63,13 @@ def solve(Board):
 
     return False
 
-display_board(Board)
+rows, columns = list(map(int, input("Enter the value of rows and columns.\n").split()))
+Board = []
+for i in range(rows):
+    Temp = list(map(int, input("Enter the value of " + str(i + 1) + " row.\n").split()))
+    Board.append(Temp)
 print()
+display_board(Board)
 print()
 solve(Board)
 display_board(Board)        
