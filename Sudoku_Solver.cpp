@@ -123,7 +123,6 @@ int main()
     {
         *(Board + i) = (int *)malloc(columns * sizeof(int));
     }
-    cout << "Enter the values of initial Sudoku Board" << endl;
     for(int i = 0; i < rows; i++)
     {
         cout << "Enter the " << (i + 1) << " row of Sudoku" << endl;
